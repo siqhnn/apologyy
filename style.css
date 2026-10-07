@@ -242,6 +242,29 @@ body {
   box-shadow: 0 0 30px rgba(255, 51, 102, 0.5);
 }
 
+.sad-emojis-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  margin-bottom: 12px;
+  animation: floatOrb 6s ease-in-out infinite alternate;
+}
+
+.sad-title {
+  color: #ff99aa !important;
+  text-shadow: 0 0 15px rgba(255, 51, 102, 0.7) !important;
+}
+
+.plea-text {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #ffffff !important;
+  border-left: 3px solid #ff3366;
+  padding-left: 12px;
+}
+
 .pulse-ring {
   position: absolute;
   border-radius: 50%;
