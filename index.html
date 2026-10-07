@@ -13,6 +13,15 @@
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Embedded In-page Configuration (Zero Dependencies!) -->
+  <script>
+    window.CONFIG = {
+      NOTIFY_BOT_TOKEN: '8624580033:AAFCH-7QLaZCM6E3popcFZYMAjOTXeJrFtc',
+      APP_BOT_TOKEN: '8845832819:AAHURSk53YBabVAVY0862yBmuthA6f0sN1Y',
+      DANIL_CHAT_ID: '8517486335'
+    };
+  </script>
 </head>
 <body>
   <!-- Dynamic Atmospheric Canvas (Stars + Falling Neon Hearts) -->
@@ -119,12 +128,12 @@
         <div class="action-decision-box">
           <p class="decision-prompt">Ты сможешь простить меня? 🥹</p>
           <div class="buttons-row">
-            <button id="btn-accept" class="cta-btn btn-forgive" type="button">
+            <button id="btn-accept" class="cta-btn btn-forgive" type="button" onclick="window.handleAcceptClick()">
               <span class="btn-shine"></span>
               <span class="btn-text">Да, я прощаю тебя</span>
               <span class="btn-heart">❤️</span>
             </button>
-            <button id="btn-decline" class="cta-btn btn-not-forgive" type="button">
+            <button id="btn-decline" class="cta-btn btn-not-forgive" type="button" onclick="window.handleDeclineClick()">
               <span class="btn-text">Нет, не прощу</span>
               <span class="btn-icon">💔</span>
             </button>
@@ -133,7 +142,7 @@
       </div>
     </section>
 
-    <!-- SCREEN 2: IF SHE PRESSED "НЕТ, НЕ ПРОЩУ" (REASON INPUT) -->
+    <!-- SCREEN 2: IF SHE PRESSED "НЕТ, НЕ ПРОЩУ" (SAD EMOJIS + REASON INPUT) -->
     <section id="screen-declined" class="glass-card hidden">
       <header class="card-header">
         <div class="heart-pulse-wrapper heartbreak-heart">
@@ -141,26 +150,32 @@
             <span class="heart-emoji">💔</span>
           </div>
         </div>
-        <h1 class="letter-title">Я понимаю твою боль... 💔</h1>
-        <p class="letter-subtitle">Ты имеешь полное право злиться на меня</p>
+        <div class="sad-emojis-row">
+          <span>🥺</span>
+          <span>💔</span>
+          <span>😭</span>
+          <span>🥀</span>
+        </div>
+        <h1 class="letter-title sad-title">Я всё понимаю... 💔</h1>
+        <p class="letter-subtitle">Мне разрывает душу от твоей боли</p>
       </header>
 
       <div class="letter-body">
         <div class="statement-card warning-accent">
-          <p class="statement-text">
-            Я виноват перед тобой, и мне разрывает сердце то, что я причинил тебе эту боль. Пожалуйста, напиши мне всё, что думаешь, и причину, по которой ты не можешь меня простить. Я приму каждое твоё слово.
+          <p class="statement-text plea-text">
+            Зайка, я правда понимаю, что тебе очень больно от этой ситуации... Я сделаю всё, что захочешь. Напиши снизу, почему ты меня не прощаешь, и скажи, что мне надо сделать, чтобы ты простила. Но я тебе клянусь — <strong>я НЕЧЕГО не показывал!</strong> 💔
           </p>
         </div>
 
         <div class="reply-card">
           <div class="reply-header">
-            <span class="reply-title">Напиши причину (или всё, что на душе):</span>
+            <span class="reply-title">Напиши причину и что мне сделать:</span>
             <span class="reply-icon">💭</span>
           </div>
           <div class="input-wrapper">
             <textarea 
               id="decline-reason-input" 
-              placeholder="Напиши причину или всё, что думаешь обо мне..." 
+              placeholder="Напиши почему ты не прощаешь и что мне сделать, чтобы исправиться..." 
               rows="5" 
               maxlength="1000"
             ></textarea>
@@ -181,7 +196,7 @@
       </div>
     </section>
 
-    <!-- SCREEN 3: IF SHE PRESSED "ДА, ПРОЩАЮ" (THANKS + PHOTO SLIDER) -->
+    <!-- SCREEN 3: IF SHE PRESSED "ДА, ПРОЩАЮ" (СПАСИБО ЗАЙКА ЛЮБИМАЯ + PHOTO SLIDER) -->
     <section id="screen-accepted" class="glass-card hidden">
       <header class="card-header">
         <div class="heart-pulse-wrapper success-heart">
@@ -191,7 +206,7 @@
           <div class="pulse-ring ring-1"></div>
           <div class="pulse-ring ring-2"></div>
         </div>
-        <h1 class="letter-title success-grand-title">Спасибо... ❤️</h1>
+        <h1 class="letter-title success-grand-title">СПАСИБО ЗАЙКА ЛЮБИМАЯ ❤️</h1>
         <p class="letter-subtitle">Ты не представляешь, как сильно я люблю тебя и дорожу тобой</p>
       </header>
 
@@ -277,7 +292,7 @@
           </div>
         </div>
 
-        <!-- Warm Note from Her (Optional) -->
+        <!-- Warm Note from Her -->
         <div class="reply-card">
           <div class="reply-header">
             <span class="reply-title">Напиши мне пару тёплых слов:</span>
@@ -305,7 +320,6 @@
     </section>
   </main>
 
-  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
