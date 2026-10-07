@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Для моей любимой девочки 💖</title>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Dynamic Atmospheric Canvas (Stars + Falling Neon Hearts) -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Glowing background gradient nebulae -->
+  <div class="ambient-nebula nebula-1"></div>
+  <div class="ambient-nebula nebula-2"></div>
+  <div class="ambient-nebula nebula-3"></div>
+
+  <main class="app-container">
+    <!-- SCREEN 1: THE LETTER & THE TWO BUTTONS -->
+    <section id="screen-letter" class="glass-card active">
+      <header class="card-header">
+        <div class="status-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">Только для твоих глаз 🔒</span>
+        </div>
+        <div class="heart-pulse-wrapper">
+          <div class="neon-heart-core">
+            <span class="heart-emoji">💔</span>
+          </div>
+          <div class="pulse-ring ring-1"></div>
+          <div class="pulse-ring ring-2"></div>
+        </div>
+        <h1 class="letter-title">Послушай меня, пожалуйста...</h1>
+        <p class="letter-subtitle">Мне бесконечно больно видеть твои слёзы</p>
+      </header>
+
+      <div class="letter-body">
+        <!-- Paragraph 1 -->
+        <div class="statement-card warning-accent">
+          <p class="statement-text">
+            То, что произошло вчера — это <strong>полная катастрофа</strong>, и я чувствую себя последним глупцом из-за того, что подставил тебя и заставил плакать. Я сам в шоке от этой ситуации и места себе не нахожу.
+          </p>
+        </div>
+
+        <!-- The Main Truth Section -->
+        <div class="truth-card">
+          <div class="truth-header">
+            <div class="truth-icon">🛡️</div>
+            <div class="truth-heading">
+              <h3>Самая главная правда:</h3>
+              <p>Я клянусь тебе всем, что у меня есть</p>
+            </div>
+          </div>
+          <p class="truth-text">
+            <strong>Я никому ничего не показывал.</strong> Когда прилетел кружок, у меня просто была включена демка в дискорде — я даже не подумал её вырубить перед тем, как открыть чат, потому что голова была забита вообще другим.
+          </p>
+          <p class="truth-text highlight-box">
+            Как только я боковым зрением понял, что открыл чат, я до боли в пальцах <strong>моментально вырубил демонстрацию экрана</strong>.
+          </p>
+          <p class="truth-text">
+            Те типы <em>физически ничего не могли увидеть</em>. Они просто сидят и давят на самое больное, пытаясь расшатать нас, посеять сомнения и заставить тебя нервничать. <strong>Они нагло врут, чтобы сделать нам больно.</strong>
+          </p>
+        </div>
+
+        <!-- Paragraph 2: My Guilt -->
+        <div class="guilt-card">
+          <p class="guilt-text">
+            Но виноват в этом <strong>только я</strong>. Я поступил крайне неосторожно, мне нужно было сто раз перепроверить, выключена ли демка, прежде чем открывать что-то личное от тебя.
+          </p>
+          <p class="guilt-text">
+            Я казню себя за то, что из-за моей невнимательности ты сейчас плачешь и переживаешь. Ты для меня — <strong>самое святое и самое ценное</strong>, что вообще есть в этой жизни.
+          </p>
+        </div>
+
+        <!-- Pillars of Trust -->
+        <div class="trust-pillars">
+          <div class="pillar-item">
+            <span class="pillar-icon">🔒</span>
+            <div class="pillar-desc">
+              <h4>Твоя тайна не тронута</h4>
+              <p>Ни один посторонний человек не видел твоего личного кружка.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <span class="pillar-icon">💖</span>
+            <div class="pillar-desc">
+              <h4>Никто кроме тебя</h4>
+              <p>Мне никто в этом мире не нужен. Ты — моя единственная.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <span class="pillar-icon">🛡️</span>
+            <div class="pillar-desc">
+              <h4>Железный урок</h4>
+              <p>Больше никогда в жизни не допущу даже намёка на неосторожность.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solemn Promise -->
+        <div class="solemn-promise">
+          <p class="promise-highlight">
+            Запомни раз и навсегда: мне никто, кроме тебя, не нужен. Ты — моя единственная, моя любимая девочка, и моя душа болит за тебя каждую секунду.
+          </p>
+          <p class="promise-sub">
+            Прости меня, пожалуйста... Я больше никогда в жизни не дам повода усомниться во мне или испугаться за нашу личную жизнь. Я безумно сильно люблю тебя. Прости меня, моё солнце... 🥺❤️
+          </p>
+        </div>
+
+        <!-- The Two Buttons Choice -->
+        <div class="action-decision-box">
+          <p class="decision-prompt">Ты сможешь простить меня? 🥹</p>
+          <div class="buttons-row">
+            <button id="btn-accept" class="cta-btn btn-forgive" type="button">
+              <span class="btn-shine"></span>
+              <span class="btn-text">Да, я прощаю тебя</span>
+              <span class="btn-heart">❤️</span>
+            </button>
+            <button id="btn-decline" class="cta-btn btn-not-forgive" type="button">
+              <span class="btn-text">Нет, не прощу</span>
+              <span class="btn-icon">💔</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: IF SHE PRESSED "НЕТ, НЕ ПРОЩУ" (REASON INPUT) -->
+    <section id="screen-declined" class="glass-card hidden">
+      <header class="card-header">
+        <div class="heart-pulse-wrapper heartbreak-heart">
+          <div class="neon-heart-core glow-broken">
+            <span class="heart-emoji">💔</span>
+          </div>
+        </div>
+        <h1 class="letter-title">Я понимаю твою боль... 💔</h1>
+        <p class="letter-subtitle">Ты имеешь полное право злиться на меня</p>
+      </header>
+
+      <div class="letter-body">
+        <div class="statement-card warning-accent">
+          <p class="statement-text">
+            Я виноват перед тобой, и мне разрывает сердце то, что я причинил тебе эту боль. Пожалуйста, напиши мне всё, что думаешь, и причину, по которой ты не можешь меня простить. Я приму каждое твоё слово.
+          </p>
+        </div>
+
+        <div class="reply-card">
+          <div class="reply-header">
+            <span class="reply-title">Напиши причину (или всё, что на душе):</span>
+            <span class="reply-icon">💭</span>
+          </div>
+          <div class="input-wrapper">
+            <textarea 
+              id="decline-reason-input" 
+              placeholder="Напиши причину или всё, что думаешь обо мне..." 
+              rows="5" 
+              maxlength="1000"
+            ></textarea>
+            <div class="counter-badge"><span id="decline-char-count">0</span> / 1000</div>
+          </div>
+
+          <button id="btn-send-decline-reason" class="cta-btn btn-send-decline" type="button">
+            <span class="btn-text">Отправить Данилу</span>
+            <span class="btn-icon">💔</span>
+          </button>
+
+          <div id="decline-status-message" class="status-alert hidden"></div>
+        </div>
+
+        <button id="btn-back-to-letter" class="text-link-btn" type="button">
+          ↩️ Вернуться назад к письму
+        </button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: IF SHE PRESSED "ДА, ПРОЩАЮ" (THANKS + PHOTO SLIDER) -->
+    <section id="screen-accepted" class="glass-card hidden">
+      <header class="card-header">
+        <div class="heart-pulse-wrapper success-heart">
+          <div class="neon-heart-core glow-pink">
+            <span class="heart-emoji">💖</span>
+          </div>
+          <div class="pulse-ring ring-1"></div>
+          <div class="pulse-ring ring-2"></div>
+        </div>
+        <h1 class="letter-title success-grand-title">Спасибо... ❤️</h1>
+        <p class="letter-subtitle">Ты не представляешь, как сильно я люблю тебя и дорожу тобой</p>
+      </header>
+
+      <div class="letter-body">
+        <div class="statement-card success-accent">
+          <p class="statement-text">
+            Спасибо за твоё доверие и за твоё золотое сердце, моё солнышко. Я клянусь, что всегда буду беречь тебя и никогда больше не заставлю плакать. Мы вместе, и никто нас не сломает.
+          </p>
+        </div>
+
+        <!-- PHOTO MEMORIES SLIDER -->
+        <div class="gallery-wrapper">
+          <div class="gallery-header">
+            <span class="gallery-badge">✨ Наши любимые моменты ✨</span>
+            <span id="photo-counter" class="gallery-counter">1 / 5</span>
+          </div>
+
+          <div class="carousel-container" id="carousel">
+            <div class="carousel-track" id="carouselTrack">
+              <!-- Slide 1 -->
+              <div class="carousel-slide active" data-index="0">
+                <div class="photo-frame">
+                  <img src="images/photo1.jpg" onerror="this.src='photo1.jpg'" alt="Наше тепло">
+                  <div class="photo-overlay">
+                    <p class="photo-caption">Уютные вечера вместе 💖</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide" data-index="1">
+                <div class="photo-frame">
+                  <img src="images/photo2.jpg" onerror="this.src='photo2.jpg'" alt="Моя красивая девочка">
+                  <div class="photo-overlay">
+                    <p class="photo-caption">Моя самая красивая и стильная девочка ✨</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide" data-index="2">
+                <div class="photo-frame">
+                  <img src="images/photo3.jpg" onerror="this.src='photo3.jpg'" alt="Вместе в рюкзачке">
+                  <div class="photo-overlay">
+                    <p class="photo-caption">Всегда с тобой в твоём рюкзачке 🥺🎒</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-slide" data-index="3">
+                <div class="photo-frame">
+                  <img src="images/photo4.png" onerror="this.src='photo4.png'" alt="say & YoungRev">
+                  <div class="photo-overlay">
+                    <p class="photo-caption">say & YoungRev — навсегда вместе 🌅</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="carousel-slide" data-index="4">
+                <div class="photo-frame">
+                  <img src="images/photo5.png" onerror="this.src='photo5.png'" alt="ПОБЕДА!">
+                  <div class="photo-overlay">
+                    <p class="photo-caption">ПОБЕДА! Лучшая пара и вечный MVP 🏆❤️</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <button id="carousel-prev" class="carousel-nav-btn prev" type="button" aria-label="Предыдущее фото">‹</button>
+            <button id="carousel-next" class="carousel-nav-btn next" type="button" aria-label="Следующее фото">›</button>
+          </div>
+
+          <!-- Dots pagination -->
+          <div class="carousel-dots" id="carouselDots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+          </div>
+        </div>
+
+        <!-- Warm Note from Her (Optional) -->
+        <div class="reply-card">
+          <div class="reply-header">
+            <span class="reply-title">Напиши мне пару тёплых слов:</span>
+            <span class="reply-icon">💌</span>
+          </div>
+          <div class="input-wrapper">
+            <textarea 
+              id="accept-reply-input" 
+              placeholder="Напиши мне что-нибудь тёплое..." 
+              rows="3" 
+              maxlength="1000"
+            ></textarea>
+            <div class="counter-badge"><span id="accept-char-count">0</span> / 1000</div>
+          </div>
+
+          <button id="btn-send-accept-reply" class="cta-btn btn-send-telegram" type="button">
+            <span class="btn-shine"></span>
+            <span class="btn-text">Отправить Данилу</span>
+            <span class="btn-icon">💌</span>
+          </button>
+
+          <div id="accept-status-message" class="status-alert hidden"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
